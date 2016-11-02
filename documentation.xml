@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook"
+    xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>XML Praktikum WS 2016/17 - Dokumentation</title>
+        <orgname>Technische Universität München</orgname>
+        <author>
+            <personname>Joonas Palm, Alexandros Tsakpinis, Nick Schneider, Lovre Petrovic, Togi Dashnyam</personname>
+        </author>
+    </info>
+    <part>
+        <title>Übungsblätter</title>
+        <chapter>
+            <title>Übungsblatt 1</title>
+            <sect1>
+                <title>Arbeitsablauf</title>
+                <para>Am Übungsblatt 1 hat jedes Teammitglied selbstständig gearbeitet, da das Team noch nicht komplektiert war.</para>
+            </sect1>
+            <sect1>
+                <title>Lernziele: Einarbeitung in XML, DTD und CSS</title>
+                <para>Insgesamt wurden 5 Aufgaben bearbeitet.</para>
+                <para>Grundlegend waren die Einrichtung der Arbeitsumgebung und der Aufbau einer
+                    beispielhaften XML Struktur. Zusätzlich wurde eine CSS Datei hinzugefügt, die
+                    Styling-Information an die XML Struktur bietet. Als Endergebnis konnte man die
+                    XML-Struktur in einem Browser öffnen.</para>
+            </sect1>
+        </chapter>
+        <chapter>
+            <title>Übungsblatt 2</title>
+            <sect1>
+                <title>Arbeitsablauf</title>
+                <para></para>
+            </sect1>
+            <sect1>
+                <title>Lernziele: Einarbeitung in DocBook und SVG</title>
+                <para/>
+            </sect1>
+        </chapter>
+    </part>
+</book>
