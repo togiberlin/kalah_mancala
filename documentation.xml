@@ -16,7 +16,7 @@
             <title>Übungsblatt 1</title>
             <sect1>
                 <title>Arbeitsablauf</title>
-                <para>Am Übungsblatt 1 hat jedes Teammitglied selbstständig gearbeitet, da das Team noch nicht komplektiert war.</para>
+                <para>Am Übungsblatt 1 hat jedes Teammitglied selbstständig gearbeitet, da das Team noch nicht komplettiert war.</para>
             </sect1>
             <sect1>
                 <title>Lernziele: Einarbeitung in XML, DTD und CSS</title>
@@ -24,18 +24,31 @@
                 <para>Grundlegend waren die Einrichtung der Arbeitsumgebung und der Aufbau einer
                     beispielhaften XML Struktur. Zusätzlich wurde eine CSS Datei hinzugefügt, die
                     Styling-Information an die XML Struktur bietet. Als Endergebnis konnte man die
-                    XML-Struktur in einem Browser öffnen.</para>
+                    XML-Struktur in einem Browser öffnen und betrachten.</para>
             </sect1>
         </chapter>
         <chapter>
             <title>Übungsblatt 2</title>
             <sect1>
                 <title>Arbeitsablauf</title>
-                <para></para>
+                <para>Für das Übungsblatt 2 hat jedes Teammitglied selbstständig gearbeitet und anschließend die Ergebnisse 
+                    in einem Meeting gegenseitig vorgestellt. Nach Untersuchung der verschiedenen Lösungsansätze wurde 
+                    ein gemeinsamer Lösungsansatz herausgearbeitet.
+                </para>
             </sect1>
             <sect1>
                 <title>Lernziele: Einarbeitung in DocBook und SVG</title>
-                <para/>
+                <para>Insgesamt wurden 3 Aufgaben bearbeitet.</para>
+                <para>Die ersten beiden Aufgaben sind die Einarbeitung in Docbook und SVG-Grafiken. 
+                    Dies wurde im Vorfeld der 3. Aufgabe gemacht. Die 3. Aufgabe besteht im Wesentlichen aus dem Aufbau
+                    einer GUI für das Spiel Mancala. Hierzu wurde nach den Spielregeln recherchiert. 
+                    Die Beschreibung auf der Wikipedia-Seite (https://en.wikipedia.org/wiki/Kalah) dient als wesentliche
+                    Grundlage der Implementierung. Der Aufbau der SVG-Datei erfolgte dann separat. 
+                    Nach einem Meeting wurden die Lösungsansätze verglichen und sich dann auf eine Vorgehensweise verständigt.
+                    Bei der Implementierung wurde auf Verständlichkeit, Redundanzfreiheit, Änderbarkeit und Responsiveness 
+                    Acht gelegt. Nach dem Fertigstellen der gemeinsamen Implementierung wurde dann die Dokumentation und
+                    Präsentation angefertigt.
+                </para>
             </sect1>
         </chapter>
     </part>
