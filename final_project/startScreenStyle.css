@@ -1,0 +1,8 @@
+/* CSS Style for the start screen of the Kalah Mancala game */
+
+/* Content full screen */
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
