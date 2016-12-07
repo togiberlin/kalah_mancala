@@ -3,7 +3,7 @@
 <!-- Example XML instance of a Kalah Mancala game session -->
 <mancalaGame id="exampleGame">
     <gameOver>0</gameOver>
-    <turnOfPlayerOne>1</turnOfPlayerOne>
+    <turnOfPlayerOne>0</turnOfPlayerOne>
     <player1>
         <store1>
             <numOfSeeds>12</numOfSeeds>
