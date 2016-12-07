@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT gameInstanceCollection (mancalaGame*) >
+
+
+<!-- The DTD for a Kalah Mancala game session instance -->
+<!ELEMENT mancalaGame (gameOver, turnOfPlayerOne, player1, player2)>
+<!ATTLIST mancalaGame id ID #REQUIRED>
+
+<!ELEMENT player1 (store1, house1)>
+<!ELEMENT player2 (store2, house2)>
+<!ELEMENT gameOver (#PCDATA)>
+<!ELEMENT turnOfPlayerOne (#PCDATA)>
+
+<!ELEMENT store1 (numOfSeeds)>
+<!ELEMENT store2 (numOfSeeds)>
+
+<!ELEMENT house1 (house11, house12, house13, house14, house15, house16)>
+<!ELEMENT house2 (house21, house22, house23, house24, house25, house26)>
+
+<!-- House elements for the player 1 -->
+<!ELEMENT house11 (numOfSeeds)>
+<!ELEMENT house12 (numOfSeeds)>
+<!ELEMENT house13 (numOfSeeds)>
+<!ELEMENT house14 (numOfSeeds)>
+<!ELEMENT house15 (numOfSeeds)>
+<!ELEMENT house16 (numOfSeeds)>
+
+<!-- House elements for the player 2 -->
+<!ELEMENT house21 (numOfSeeds)>
+<!ELEMENT house22 (numOfSeeds)>
+<!ELEMENT house23 (numOfSeeds)>
+<!ELEMENT house24 (numOfSeeds)>
+<!ELEMENT house25 (numOfSeeds)>
+<!ELEMENT house26 (numOfSeeds)>
+
+<!ELEMENT numOfSeeds (#PCDATA)>
