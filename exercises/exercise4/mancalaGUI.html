@@ -1,0 +1,36 @@
+
+<html>
+    <head>
+        
+    </head>
+    <body>
+<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="100%" height="100%">
+    
+    <title>Kalah Mancala</title>
+    <desc>The GUI playground for the Kalah Mancala game</desc>
+    
+    <defs>
+        <!-- Button -->
+        <rect id="button" onclick="http://localhost:8984/kalahMancala" y="50%" x="50%" rx="20" ry="20" width="15%" height="6%" stroke="green" stroke-width="5" fill="lightgreen" />
+    </defs>
+    
+    <!-- Background -->
+    <svg>
+        <rect rx="20" ry="20" width="100%" height="70%" fill="green" stroke="green" stroke-width="5" fill-opacity="0.3"/>
+    </svg>
+    <svg>
+        <text x="50%" y="15%" font-size="50" fill="green" text-anchor="middle" >MANCALA</text>
+    </svg>
+    <g>
+        <use id="btn-newgame" xlink:href="#button"  />
+        <text x="50%" y="50%" font-size="25" fill="darkgreen" text-anchor="middle" >NEW GAME</text>
+    </g>
+   
+    
+
+</svg>
+
+    </body>
+</html>
