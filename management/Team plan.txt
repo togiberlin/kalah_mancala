@@ -4,7 +4,7 @@ TUM XML Lab 2016/17 - Team XForms
 
 Tasks:
 
-1.) Finalize the start screen. Add responsive styling with the help of startScreenStyle.css. Add hover, click effects to the "PLAY GAME" button. The elements do not have to be designed with SVG, bootstrap can also be used.
+1.) (DONE) TOGI - Finalize the start screen. Add responsive styling with the help of startScreenStyle.css. Add hover, click effects to the "PLAY GAME" button. The elements do not have to be designed with SVG, bootstrap can also be used.
 
 2.) ALEXANDROS - Modify the XQuery file "newGame.xquery" to react to clicks on the buttons "PLAY GAME", "NEW GAME" and "PLAY AGAIN" (react to REST calls on the path /newGame). Make sure the methods work on the BaseX server and move them from "newGame.xquery" to the file "controller.xquery".
 
