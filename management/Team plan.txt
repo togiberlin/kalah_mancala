@@ -16,11 +16,11 @@ Tasks:
 
 4.) JOONAS - Modify the XQuery file "moveSeeds.xquery" to react to REST calls resulting from clicks on the houses. After distributing the seeds, call a XQuery method to create a rest:forward to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}", which checks the special cases. Add the rest:forward method to the XQuery file "controller.xquery".
 
-5.) Merge the XQuery files that check the two special cases into a single XQuery file called "specialCases.xquery". In that file react to the REST call to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}" and check the special cases. After checking, update the database and call a XQuery method that creates a rest:forward to the link "http://localhost:8984/checkGameOver/{$gameId}". Add the rest:forward method to the XQuery file "controller.xquery".
+5.) TOGI - Merge the XQuery files that check the two special cases into a single XQuery file called "specialCases.xquery". In that file react to the REST call to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}" and check the special cases. After checking, update the database and call a XQuery method that creates a rest:forward to the link "http://localhost:8984/checkGameOver/{$gameId}". Add the rest:forward method to the XQuery file "controller.xquery".
 
 6.) LOVRE - Modify the XQuery file that checks if the game is over to react to REST calls to the link "http://localhost:8984/checkGameOver/{$gameId}". After checking if the game is over, trigger a new rest:forward to the link "http://localhost:8984/transform/{$gameId}", to apply the XSLT transformator (similarily as in 2.1).
 
-7.) Create a new XQuery method called "cleanDatabase". This method should delete all game instances from the file "GameInstanceCollection.xml" that are over.
+7.) ALEXANDROS - Create a new XQuery method called "cleanDatabase". This method should delete all game instances from the file "GameInstanceCollection.xml" that are over.
 
-8.) Create a new help popup with game instructions that is triggered when clicking on the "HELP" button on the game session screen.
+8.) NICK - Create a new help popup with game instructions that is triggered when clicking on the "HELP" button on the game session screen.
 
