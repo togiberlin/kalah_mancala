@@ -5,10 +5,14 @@ module namespace c = "kalahMancala/controller";
 declare variable $c:mancalaStartScreen := doc("startScreen.html");
 declare variable $c:gameInstanceCollection := db:open("KalahMancala");
 
+
+
 (: Display the start screen to the player :)
 declare %rest:path("/kalahMancala") %rest:GET function c:start() {
   $c:mancalaStartScreen
 };
+
+
 
 declare %rest:path("/refreshData") %rest:GET updating function c:refreshDatabase(){
 let $collection = $c:gameInstanceCollection/gameInstanceCollection
