@@ -3,26 +3,21 @@ xquery version "1.0";
 module namespace c = "kalahMancala/controller";
 
 declare variable $c:mancalaStartScreen := doc("startScreen.html");
-<<<<<<< HEAD
+
 declare variable $c:gameInstanceCollection := db:open("KalahMancala");
-
-
-=======
->>>>>>> 2b4d84a20492edc2f2ff35f3e0326e140a991dec
 
 (: Display the start screen to the player :)
 declare %rest:path("/kalahMancala") %rest:GET function c:start() {
   $c:mancalaStartScreen
-<<<<<<< HEAD
 };
 
 
-
-declare %rest:path("/refreshData") %rest:GET updating function c:refreshDatabase(){
-let $collection = $c:gameInstanceCollection/gameInstanceCollection
-
-
+declare %rest:path("/refreshDatabase") %rest:GET updating function c:refreshDatabase(){
+for $x in $c:gameInstanceCollection/gameInstanceCollection/mancalaGame
+where ($x/gameOver = "1" or  $x[(fn:day-from-dateTime(fn:current-dateTime())-fn:day-from-dateTime(xs:dateTime(@id))) >= 1])
+return delete nodes $x
 };
+
 
 declare %rest:path("/newGame") %rest:GET updating function c:newGame(){
     let $collection := $c:gameInstanceCollection/gameInstanceCollection
@@ -86,6 +81,4 @@ return insert nodes $newGame as first into $collection
 
 };
 
-=======
-};
->>>>>>> 2b4d84a20492edc2f2ff35f3e0326e140a991dec
+
