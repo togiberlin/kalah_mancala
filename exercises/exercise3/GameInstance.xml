@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type = "text/xsl" href = "MancalaTransformator.xsl"?>
+<!-- Example XML instance of a Kalah Mancala game session -->
+<mancalaGame id="exampleGame">
+    <gameOver>0</gameOver>
+    <turnOfPlayerOne>1</turnOfPlayerOne>
+    <player1>
+        <store1>
+            <numOfSeeds>12</numOfSeeds>
+        </store1>
+        <house1>
+            <house11>
+                <numOfSeeds>5</numOfSeeds>
+            </house11>
+            <house12>
+                <numOfSeeds>4</numOfSeeds>
+            </house12>
+            <house13>
+                <numOfSeeds>6</numOfSeeds>
+            </house13>
+            <house14>
+                <numOfSeeds>0</numOfSeeds>
+            </house14>
+            <house15>
+                <numOfSeeds>1</numOfSeeds>
+            </house15>
+            <house16>
+                <numOfSeeds>2</numOfSeeds>
+            </house16>
+        </house1>
+    </player1>
+    <player2>
+        <store2>
+            <numOfSeeds>15</numOfSeeds>
+        </store2>
+        <house2>
+            <house21>
+                <numOfSeeds>7</numOfSeeds>
+            </house21>
+            <house22>
+                <numOfSeeds>4</numOfSeeds>
+            </house22>
+            <house23>
+                <numOfSeeds>4</numOfSeeds>
+            </house23>
+            <house24>
+                <numOfSeeds>2</numOfSeeds>
+            </house24>
+            <house25>
+                <numOfSeeds>0</numOfSeeds>
+            </house25>
+            <house26>
+                <numOfSeeds>1</numOfSeeds>
+            </house26>
+        </house2>
+    </player2>
+</mancalaGame>

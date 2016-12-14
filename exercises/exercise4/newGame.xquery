@@ -1,31 +1,8 @@
 xquery version "1.0";
+declare namespace local = "local";
 
-module namespace c = "kalahMancala/controller";
-
-declare variable $c:mancalaStartScreen := doc("startScreen.html");
-<<<<<<< HEAD
-declare variable $c:gameInstanceCollection := db:open("KalahMancala");
-
-
-=======
->>>>>>> 2b4d84a20492edc2f2ff35f3e0326e140a991dec
-
-(: Display the start screen to the player :)
-declare %rest:path("/kalahMancala") %rest:GET function c:start() {
-  $c:mancalaStartScreen
-<<<<<<< HEAD
-};
-
-
-
-declare %rest:path("/refreshData") %rest:GET updating function c:refreshDatabase(){
-let $collection = $c:gameInstanceCollection/gameInstanceCollection
-
-
-};
-
-declare %rest:path("/newGame") %rest:GET updating function c:newGame(){
-    let $collection := $c:gameInstanceCollection/gameInstanceCollection
+declare updating function local:insert(){
+    let $a := doc("GameInstanceCollection.xml")/gameInstanceCollection
     let $newGame := 
 (<mancalaGame id = "{fn:current-dateTime()}">
     <gameOver>0</gameOver>
@@ -82,10 +59,16 @@ declare %rest:path("/newGame") %rest:GET updating function c:newGame(){
     </player2>
 </mancalaGame>)
 
-return insert nodes $newGame as first into $collection
+return insert nodes $newGame as first into $a
 
 };
 
-=======
-};
->>>>>>> 2b4d84a20492edc2f2ff35f3e0326e140a991dec
+
+(: Just for testing :)
+let $temp := ""
+return local:insert()
+
+
+
+
+
