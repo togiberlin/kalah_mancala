@@ -4,15 +4,15 @@ TUM XML Lab 2016/17 - Team XForms
 
 Tasks:
 
-1.) (DONE) TOGI - Finalize the start screen. Add responsive styling with the help of startScreenStyle.css. Add hover, click effects to the "PLAY GAME" button. The elements do not have to be designed with SVG, bootstrap can also be used.
+1.) TOGI - Finalize the start screen. Add responsive styling with the help of startScreenStyle.css. Add hover, click effects to the "PLAY GAME" button. The elements do not have to be designed with SVG, bootstrap can also be used.
 
-2.) ALEXANDROS - Modify the XQuery file "newGame.xquery" to react to clicks on the buttons "PLAY GAME", "NEW GAME" and "PLAY AGAIN" (react to REST calls on the path /newGame). Make sure the methods work on the BaseX server and move them from "newGame.xquery" to the file "controller.xquery".
+2.) (DONE) ALEXANDROS - Modify the XQuery file "newGame.xquery" to react to clicks on the buttons "PLAY GAME", "NEW GAME" and "PLAY AGAIN" (react to REST calls on the path /newGame). Make sure the methods work on the BaseX server and move them from "newGame.xquery" to the file "controller.xquery".
 
 2.1) JOONAS - After creating a new game instance in the database, call the XSLT transformator "MancalaTransformator" with a rest:forward to the link "http://localhost:8984/transform/{$gameId}". A new XQuery method has to be created for that in the XQuery file "controller.xquery". The method takes the gameInstance (gameId) as a paramater, applies the transformator to it and returns the resulting XHTML file.
 
-3.) Modify the XSLT file "MancalaTransformator" to display houses as links. Make sure one can't click on the houses of the opposing player. When clicking on a house trigger the link "http://localhost:8984/move/{$gameId}/{$houseId}". Add XHTML as the DOCTYPE in the transformator.
+3.) TOGI - Modify the XSLT file "MancalaTransformator" to display houses as links. Make sure one can't click on the houses of the opposing player. When clicking on a house trigger the link "http://localhost:8984/move/{$gameId}/{$houseId}". Add XHTML as the DOCTYPE in the transformator.
 
-3.1.) Add CSS styling for the game field (image as background, hover effects etc.).
+3.1.) TOGI - Add CSS styling for the game field (image as background, hover effects etc.).
 
 4.) JOONAS - Modify the XQuery file "moveSeeds.xquery" to react to REST calls resulting from clicks on the houses. After distributing the seeds, call a XQuery method to create a rest:forward to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}", which checks the special cases. Add the rest:forward method to the XQuery file "controller.xquery".
 
@@ -23,4 +23,6 @@ Tasks:
 7.) ALEXANDROS - Create a new XQuery method called "cleanDatabase". This method should delete all game instances from the file "GameInstanceCollection.xml" that are over.
 
 8.) NICK - Create a new help popup with game instructions that is triggered when clicking on the "HELP" button on the game session screen.
+
+9.) NICK - Documentation. Describe our application, workflow, team etc. and add diagrams.
 
