@@ -8,17 +8,17 @@ Tasks:
 
 2.) (DONE) ALEXANDROS - Modify the XQuery file "newGame.xquery" to react to clicks on the buttons "PLAY GAME", "NEW GAME" and "PLAY AGAIN" (react to REST calls on the path /newGame). Make sure the methods work on the BaseX server and move them from "newGame.xquery" to the file "controller.xquery".
 
-2.1) JOONAS - After creating a new game instance in the database, call the XSLT transformator "MancalaTransformator" with a rest:forward to the link "http://localhost:8984/transform/{$gameId}". A new XQuery method has to be created for that in the XQuery file "controller.xquery". The method takes the gameInstance (gameId) as a paramater, applies the transformator to it and returns the resulting XHTML file.
+2.1) JOONAS - After creating a new game instance in the database, call the XSLT transformator "MancalaTransformator" with a web:redirect to the link "http://localhost:8984/transform/{$gameId}". A new XQuery method has to be created for that in the XQuery file "controller.xquery". The method takes the gameInstance (gameId) as a paramater, applies the transformator to it and returns the resulting XHTML file.
 
 3.) TOGI - Modify the XSLT file "MancalaTransformator" to display houses as links. Make sure one can't click on the houses of the opposing player. When clicking on a house trigger the link "http://localhost:8984/move/{$gameId}/{$houseId}". Add XHTML as the DOCTYPE in the transformator.
 
 3.1.) TOGI - Add CSS styling for the game field (image as background, hover effects etc.).
 
-4.) JOONAS - Modify the XQuery file "moveSeeds.xquery" to react to REST calls resulting from clicks on the houses. After distributing the seeds, call a XQuery method to create a rest:forward to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}", which checks the special cases. Add the rest:forward method to the XQuery file "controller.xquery".
+4.) JOONAS - Modify the XQuery file "moveSeeds.xquery" to react to REST calls resulting from clicks on the houses. After distributing the seeds, call a XQuery method to create a web:redirect to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}", which checks the special cases. Add the web:redirect method to the XQuery file "controller.xquery".
 
-5.) TOGI - Merge the XQuery files that check the two special cases into a single XQuery file called "specialCases.xquery". In that file react to the REST call to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}" and check the special cases. After checking, update the database and call a XQuery method that creates a rest:forward to the link "http://localhost:8984/checkGameOver/{$gameId}". Add the rest:forward method to the XQuery file "controller.xquery".
+5.) TOGI - Merge the XQuery files that check the two special cases into a single XQuery file called "specialCases.xquery". In that file react to the REST call to the link "http://localhost:8984/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}" and check the special cases. After checking, update the database and call a XQuery method that creates a web:redirect to the link "http://localhost:8984/checkGameOver/{$gameId}". Add the web:redirect method to the XQuery file "controller.xquery".
 
-6.) LOVRE - Modify the XQuery file that checks if the game is over to react to REST calls to the link "http://localhost:8984/checkGameOver/{$gameId}". After checking if the game is over, trigger a new rest:forward to the link "http://localhost:8984/transform/{$gameId}", to apply the XSLT transformator (similarily as in 2.1).
+6.) LOVRE - Modify the XQuery file that checks if the game is over to react to REST calls to the link "http://localhost:8984/checkGameOver/{$gameId}". After checking if the game is over, trigger a new web:redirect to the link "http://localhost:8984/transform/{$gameId}", to apply the XSLT transformator (similarily as in 2.1).
 
 7.) ALEXANDROS - Create a new XQuery method called "cleanDatabase". This method should delete all game instances from the file "GameInstanceCollection.xml" that are over.
 
