@@ -1,16 +1,17 @@
 (: THE COMMONLY USED XQUERY METHODS :)
 
-xquery version "1.0";
+xquery version "1.0" encoding "UTF-8";
 
 module namespace cm = "kalahMancala/common";
 
-declare namespace xslt = 'http://basex.org/modules/xslt';
+(: Redirect to the XML to XHTML transformator :)
+declare function cm:redirectToTransformator($gameId as xs:string) {
+    let $transformatorURL := fn:concat("http://localhost:8984/gxf/transform/", $gameId)
+    return web:redirect($transformatorURL)
+};
 
-declare variable $cm:gameInstanceCollection := db:open("KalahMancala");
-declare variable $cm:transformator := doc("MancalaTransformator.xsl");
-
-(: Transform the game session from the database to HTML using XSLT :)
-declare %rest:path('/transform/{$gameId}') %rest:GET %output:media-type("text/html") function cm:transformToHtml($gameId as xs:string) {
-  let $gameInstance := $cm:gameInstanceCollection/gameInstanceCollection/mancalaGame[@id=$gameId]
-  return xslt:transform-text($gameInstance, $cm:transformator)
+(: Generate a timestamp as an ID for the game instance. :)
+declare function cm:generateGameId() as xs:string {
+  let $dateTime := xs:string(fn:current-dateTime())
+  return fn:translate($dateTime, '&#043;', '')
 };
