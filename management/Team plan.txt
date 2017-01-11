@@ -11,7 +11,7 @@ Tasks:
 
 2.1) (DONE) JOONAS - After creating a new game instance in the database, call the XSLT transformator "MancalaTransformator" with a web:redirect to the link "http://localhost:8984/gxf/transform/{$gameId}". A new XQuery method has to be created for that in the XQuery file "controller.xquery". The method takes the gameInstance (gameId) as a paramater, applies the transformator to it and returns the resulting XHTML file.
 
-3.) TOGI - Modify the XSLT file "MancalaTransformator" to display houses as links. Make sure one can't click on the houses of the opposing player. When clicking on a house trigger the link "http://localhost:8984/gxf/move/{$gameId}/{$houseId}". Add XHTML as the DOCTYPE in the transformator.
+3.) (DONE) TOGI - Modify the XSLT file "MancalaTransformator" to display houses as links. Make sure one can't click on the houses of the opposing player. When clicking on a house trigger the link "http://localhost:8984/gxf/move/{$gameId}/{$houseId}". Add XHTML as the DOCTYPE in the transformator.
 
 3.1.) TOGI - Add CSS styling for the game field (image as background, hover effects etc.).
 
