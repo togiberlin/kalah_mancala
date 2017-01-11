@@ -2,7 +2,7 @@
 
 xquery version "1.0" encoding "UTF-8";
 
-declare namespace csc = "kalahMancala/checkSpecialCases";
+module namespace csc = "kalahMancala/checkSpecialCases";
 
 import module namespace cm = "kalahMancala/common" at "common.xq";
 import module namespace ms = "kalahMancala/" at "moveSeeds.xquery";
@@ -17,15 +17,17 @@ declare function csc:checkSpecialCases($gameId as xs:string?, $house as xs:strin
         csc:getOppositePitHasSeeds($gameId, ms:getLastPit($house, $numOfStepsToMove, $currentPlayer))) then (
         (: First, fill players store. Then, check if player is eligible for a second turn in a row :)
         if (ms:getLastPit($house, $numOfStepsToMove, $currentPlayer) = "store1" or "store2") then (
+            (: This if-condition is for the event when a Player gets a second turn :)
             let $currentStore := csc:getCurrentPlayersStore($currentPlayer)
             let $lastPit := ms:getLastPit($house, $numOfStepsToMove, $currentPlayer)
-            return csc:fillPlayersStore($gameId, $currentStore, $lastPit), csc:checkPlayersSecondTurn($gameId, $currentStore)
+            return csc:fillPlayersStore($gameId, $currentStore, $lastPit), csc:checkPlayersSecondTurn($gameId, $currentStore), db:output(cm:checkGameOver($gameId))
         )
         else (
             (: All checks have passed, move last pit and opposite pit seeds to current players store :)
+            (: Note: player has in this else-block only one turn :)
             let $currentStore := csc:getCurrentPlayersStore($currentPlayer)
             let $lastPit := ms:getLastPit($house, $numOfStepsToMove, $currentPlayer)
-            return csc:fillPlayersStore($gameId, $currentStore, $lastPit)
+            return csc:fillPlayersStore($gameId, $currentStore, $lastPit), db:output(cm:checkGameOver($gameId))
         )
     )
     else (

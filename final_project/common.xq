@@ -16,6 +16,12 @@ declare function cm:redirectToSpecialCases($gameId as xs:string, $startingPit as
   return web:redirect($specialCasesURL)
 };
 
+(: Check, if game is over :)
+declare function cm:checkGameOver($gameId as xs:string) {
+  let $checkGameOverURL := fn:concat("http://localhost:8984/gxf/checkGameOver/", $gameId)
+  return web:redirect($checkGameOverURL)
+};
+
 (: Generate a timestamp as an ID for the game instance. Remove white spaces. :)
 declare function cm:generateGameId() as xs:string {
   let $dateTime := xs:string(fn:current-dateTime())
