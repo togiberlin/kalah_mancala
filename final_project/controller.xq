@@ -5,6 +5,7 @@ xquery version "1.0" encoding "UTF-8";
 module namespace c = "kalahMancala/controller";
 
 import module namespace cm = "kalahMancala/common" at "common.xq";
+import module namespace ms = "kalahMancala/moveSeeds" at "moveSeeds.xquery";
 declare namespace xslt = "http://basex.org/modules/xslt";
 
 declare variable $c:mancalaStartScreen := doc("startScreen.html");
@@ -16,16 +17,16 @@ declare %rest:path("/gxf/kalahMancala") %rest:GET function c:start() {
   $c:mancalaStartScreen
 };
 
-(: Transform the game session from the database to HTML using XSLT :)
+(: Transform the game session from the database to HTML using XSLT. :)
 declare %rest:path('/gxf/transform/{$gameId}') %rest:GET %output:media-type("text/html") function c:transformToHtml($gameId as xs:string) {
   let $gameInstance := $c:gameInstanceCollection/gameInstanceCollection/mancalaGame[@id=$gameId]
   return xslt:transform-text($gameInstance, $c:transformator)
 };
 
-(: Clear the database. Finished games and games with a timestamp older than 24h are removed. :)
+(: Clear the database. Finished games and games with a timestamp older than 2 days are removed. :)
 declare %rest:path("/gxf/refreshDatabase") %rest:GET updating function c:refreshDatabase() {
   for $game in $c:gameInstanceCollection/gameInstanceCollection/mancalaGame
-  where ($game/gameOver/text() = 1 or $game[(fn:day-from-dateTime(fn:current-dateTime())-fn:day-from-dateTime(xs:dateTime(@id))) >= 1])
+  where ($game/gameOver/text() = 1 or cm:getAgeOfGame($game) >= 2)
   return delete nodes $game
 };
 
@@ -90,4 +91,14 @@ declare %rest:path("/gxf/newGame") %rest:GET updating function c:newGame() {
     </mancalaGame>
   )
   return (insert nodes $newGame as first into $collection, db:output(cm:redirectToTransformator($gameId)))
+};
+
+(: React to the move of a player and distribute the required seeds. :)
+declare updating %rest:path('/gxf/move/{$gameId}/{$house}') %rest:GET function c:moveSeeds($gameId as xs:string, $house as xs:string) {
+  ms:moveSeeds($gameId, $house)
+};
+
+(: Check the special cases after distributing the seeds. :)
+declare updating %rest:path('/gxf/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}') %rest:GET function c:checkSpecialCases($gameId as xs:string, $startingPit as xs:string, $numOfStepsToMove as xs:decimal, $player as xs:decimal) {
+  (: TODO - call the checkSpecialCases method. :)
 };
