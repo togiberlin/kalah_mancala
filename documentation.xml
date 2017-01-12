@@ -11,16 +11,44 @@
         </author>
     </info>
     <part>
-        <title>Übungsblätter</title>
+        <title>Erarbeitungsphase</title>
         <chapter>
-            <title>Übungsblatt 1</title>
+            <title>Kodierung strukturierter Dokumente: XML und XML-Technologie</title>
             <sect1>
-                <title>Arbeitsablauf</title>
-                <para>Am Übungsblatt 1 hat jedes Teammitglied selbstständig gearbeitet, da das Team noch nicht komplettiert war.</para>
+                <title>Organisation</title>
+                <para>Jedes Teammitglied hat das Arbeitsblatt zu dieser Thematik eigenständig
+                    bearbeitet, da zu diesem Zeitpunkt das Team noch nicht gegründet worden war. Im
+                    Rahmen der zweiten Stunde haben wir uns als Team zusammengefunden und erste
+                    organisatorische Themen besprochen. </para>
+                <para>Dazu gehörten: </para>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>wöchentliche Meetings</para>
+                        </listitem>
+                        <listitem>
+                            <para>Zeitpunkt der Vorstellung eines Übungsblattes</para>
+                        </listitem>
+                        <listitem>
+                            <para>weiteres Vorgehen</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
             </sect1>
             <sect1>
-                <title>Lernziele: Einarbeitung in XML, DTD und CSS</title>
-                <para>Insgesamt wurden 5 Aufgaben bearbeitet.</para>
+                <title>Thematik: Einarbeitung in XML, DTD und CSS</title>
+                <para>Insgesamt waren 5 Aufgaben zu bearbeiten.</para>
+                <para>Zuallererst sollte sich jeder eigenständig mit der Syntax von XML, DTD und
+                    CSS, sowie den Grundlagen von Unicode beschäftigen. Um die syntaktische
+                    Korrektheit zu überprüfen und um erste kleinere XML-Dokumente schreiben zu
+                    können, installierten wir uns die Arbeitsumgebung unabhängig von einander.
+                    Nachdem einige experimentelle XML Strukturen geschrieben und mit CSS-Stylesheets
+                    verbunden worden sind, begann die eigentliche Aufgabe. Diese war in drei
+                    Teilaufgaben aufgeteilt: <orderedlist>
+                        <listitem>
+                            <para>Die XML-Struktur, welche </para>
+                        </listitem>
+                    </orderedlist></para>
                 <para>Grundlegend waren die Einrichtung der Arbeitsumgebung und der Aufbau einer
                     beispielhaften XML Struktur. Zusätzlich wurde eine CSS Datei hinzugefügt, die
                     Styling-Information an die XML Struktur bietet. Als Endergebnis konnte man die
@@ -28,7 +56,7 @@
             </sect1>
         </chapter>
         <chapter>
-            <title>Übungsblatt 2</title>
+            <title>Namespaces DocBook SVG</title>
             <sect1>
                 <title>Arbeitsablauf</title>
                 <para>Für das Übungsblatt 2 hat jedes Teammitglied selbstständig gearbeitet und anschließend die Ergebnisse 
@@ -49,6 +77,34 @@
                     Acht gelegt. Nach dem Fertigstellen der gemeinsamen Implementierung wurde dann die Dokumentation und
                     Präsentation angefertigt.
                 </para>
+            </sect1>
+        </chapter>
+        <chapter>
+            <title>XDM und XPath</title>
+            <sect1>
+                <title>Organisation</title>
+                <para></para>
+            </sect1>
+        </chapter>
+        <chapter>
+            <title>XSLT</title>
+            <sect1>
+                <title>Organisation</title>
+                <para></para>
+            </sect1>
+        </chapter>
+        <chapter>
+            <title>XQuery</title>
+            <sect1>
+                <title>Organisation</title>
+                <para></para>
+            </sect1>
+        </chapter>
+        <chapter>
+            <title>XML-Stack für Web-Anwendungen und XForms</title>
+            <sect1>
+                <title>Organisation</title>
+                <para></para>
             </sect1>
         </chapter>
     </part>
