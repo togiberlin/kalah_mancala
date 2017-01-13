@@ -46,37 +46,87 @@
                     verbunden worden sind, begann die eigentliche Aufgabe. Diese war in drei
                     Teilaufgaben aufgeteilt: <orderedlist>
                         <listitem>
-                            <para>Die XML-Struktur, welche </para>
+                            <para>Die XML-Struktur - es soll eine Sammlung von Spielen,
+                                Aufgabenblättern oder Rezepten entworfen werden.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Die CSS (Gestaltungsanweisung für ein XML-Dokument, ein
+                                XML-Dokument kann mehrere Style Sheets haben) - das Stylesheet soll
+                                eine Visualisierung der Sammlung darstellen.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Die DTD (Regelsatz, um typgleiche Dokumente zu deklarieren) - die
+                                DTD soll bewirken, dass alle Sammlungen die gleiche Struktur
+                                besitzen. </para>
                         </listitem>
                     </orderedlist></para>
-                <para>Grundlegend waren die Einrichtung der Arbeitsumgebung und der Aufbau einer
-                    beispielhaften XML Struktur. Zusätzlich wurde eine CSS Datei hinzugefügt, die
-                    Styling-Information an die XML Struktur bietet. Als Endergebnis konnte man die
-                    XML-Struktur in einem Browser öffnen und betrachten.</para>
+                <para>Als Endergebnis konnte man die XML-Struktur in einem Browser öffnen und
+                    betrachten.</para>
             </sect1>
         </chapter>
         <chapter>
             <title>Namespaces DocBook SVG</title>
             <sect1>
-                <title>Arbeitsablauf</title>
-                <para>Für das Übungsblatt 2 hat jedes Teammitglied selbstständig gearbeitet und anschließend die Ergebnisse 
-                    in einem Meeting gegenseitig vorgestellt. Nach Untersuchung der verschiedenen Lösungsansätze wurde 
-                    ein gemeinsamer Lösungsansatz herausgearbeitet.
-                </para>
+                <title>Organisation</title>
+                <para>Wir hatten uns dazu entschieden, das Aufgabenblatt 2 vorzustellen. Damit jeder
+                    anständig in die Thematik findet und lernt mit DocBook und SVG umzugehen, haben
+                    wir uns dazu entschieden, die Aufgaben vorerst noch nicht zu verteilen. Jedes
+                    Teammitglied sollte die Aufgaben selbstständig bearbeiten. Bei einem ersten
+                    Meeting haben wir erste Ergebnisse besprochen und eine Vorgehensweise
+                    festgelegt. Innerhalb des nächsten Meetings haben wir die Ergbenisse
+                    vorgestellt, verglichen und diskutiert. Aus den verschiedenen Lösungsansätzen
+                    haben wir ein Teamergebnis herausgearbeitet. Wir hatten festgestellt, dass wir,
+                    um stetig unsere Ergebnisse austauschen zu können, ein Version Control System
+                    benötigten. Es entstanden folgende Aufgaben, die zu erledigen waren:<itemizedlist>
+                        <listitem>
+                            <para>Finalisierung des Codes</para>
+                        </listitem>
+                        <listitem>
+                            <para>Dokumentation</para>
+                        </listitem>
+                        <listitem>
+                            <para>Erstellung der Präsentation des Übungsblattes</para>
+                        </listitem>
+                        <listitem>
+                            <para>Aufteilung des Präsentationsinhalts</para>
+                        </listitem>
+                        <listitem>
+                            <para>Einrichtung eines GitHub-Ordners</para>
+                        </listitem>
+                    </itemizedlist>Diese Aufgaben haben wir auf die einzelnen Gruppenmitglieder
+                    verteilt. Damit keine Ungleichheiten auftreten, haben wir uns dazu entschieden,
+                    uns auf ein XML-Editor zu einigen. Da Oxygen auch in den Übungen benutzt wurde
+                    und am wenigsten zusätzliche Plug-Ins benötigte, haben wir uns für Oxygen
+                    entschieden.</para>
             </sect1>
             <sect1>
-                <title>Lernziele: Einarbeitung in DocBook und SVG</title>
+                <title>Thematik: Einarbeitung in DocBook und SVG</title>
                 <para>Insgesamt wurden 3 Aufgaben bearbeitet.</para>
-                <para>Die ersten beiden Aufgaben sind die Einarbeitung in Docbook und SVG-Grafiken. 
-                    Dies wurde im Vorfeld der 3. Aufgabe gemacht. Die 3. Aufgabe besteht im Wesentlichen aus dem Aufbau
-                    einer GUI für das Spiel Mancala. Hierzu wurde nach den Spielregeln recherchiert. 
-                    Die Beschreibung auf der Wikipedia-Seite (https://en.wikipedia.org/wiki/Kalah) dient als wesentliche
-                    Grundlage der Implementierung. Der Aufbau der SVG-Datei erfolgte dann separat. 
-                    Nach einem Meeting wurden die Lösungsansätze verglichen und sich dann auf eine Vorgehensweise verständigt.
-                    Bei der Implementierung wurde auf Verständlichkeit, Redundanzfreiheit, Änderbarkeit und Responsiveness 
-                    Acht gelegt. Nach dem Fertigstellen der gemeinsamen Implementierung wurde dann die Dokumentation und
-                    Präsentation angefertigt.
-                </para>
+                <para>Die ersten beiden Aufgaben bestanden aus der Einarbeitung in DocBook und in
+                    SVG-Grafiken. Dies wurde im Vorfeld der 3. Aufgabe gemacht. Die 3. Aufgabe
+                    besteht im Wesentlichen aus dem Aufbau einer GUI für das Spiel Mancala. Hierzu
+                    wurde nach den Spielregeln recherchiert. Die Beschreibung auf der
+                    Wikipedia-Seite (https://en.wikipedia.org/wiki/Kalah) dient als wesentliche
+                    Grundlage der Implementierung. Der Aufbau der SVG-Datei erfolgte dann separat.
+                    Wir hatten uns darauf geeinigt ein klassisches Brettdesign beizubehalten. Das
+                    heißt jeweils ein großes Oval auf der linken und rechten Seite, als Mancalas,
+                    sowie sechsmal zwei Kreise, als Häuser, zwischen den Mancalas zu positionieren.
+                    Um den Spieler, der am Zug ist, zu kennzeichnen, haben wir uns für einen
+                    Glow-Effekt entschieden. Darüberhinaus haben die Spieler , als zusätzliche
+                    Orientierung, unterschiedliche Farben. Bei der Darstellung der Steine in den
+                    Häusern und Mancalas, haben wir aus Rücksicht der Übersicht uns dazu
+                    entschieden, in den Häusern die Steine als kleine Punkte anzuzeigen und in den
+                    Mancalas als Zahl. <inlinemediaobject>
+                        <imageobject>
+                            <imagedata fileref="MancalaGUI.png" width="70%"/>
+                        </imageobject>
+                    </inlinemediaobject></para>
+                
+                <para>Bei der Implementierung wurde auf Verständlichkeit, Redundanzfreiheit,
+                    Änderbarkeit und Responsiveness Acht gelegt. Das Responsive Design haben wir
+                    durch prozentuale Größe und Position der Elemente erreicht. Verständlichkeit,
+                    Redundanzfreiheit und Änderbarkeit haben wir probiert mit einer strukturierten
+                    Vererbung zu erfüllen. </para>
             </sect1>
         </chapter>
         <chapter>

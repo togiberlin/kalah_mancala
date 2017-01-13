@@ -69,10 +69,10 @@
     <!-- Example seeds -->
     <!-- Number of seeds in stores represented as numbers -->
     <svg id="store-p1-score">
-        <text x="7%" y="36%" font-size="50" fill="black" text-anchor="middle" >16</text>
+        <text x="7%" y="36%" font-size="50" fill="black" text-anchor="middle" >20</text>
     </svg>
     <svg id="store-p2-score">
-        <text x="93%" y="36%" font-size="50" fill="black" text-anchor="middle" >0</text>
+        <text x="93%" y="36%" font-size="50" fill="black" text-anchor="middle" >27</text>
     </svg>
     <!-- Number of seeds in houses represented as black dots -->
     <svg id="seed">
