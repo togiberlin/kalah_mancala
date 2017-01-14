@@ -249,7 +249,92 @@
         <title>Projektphase</title>
         <chapter>
             <title>Aufgabenverteilung</title>
-            <para></para>
+            <para>Durch die Übungsblätter hatten wir bereits eine gute Grundlage, die wir nun noch
+                verfeinern und entsprechend, der Spielfunktionen und des Layouts erweitern mussten.
+                Es entstanden dabei folgende Aufgaben:<orderedlist>
+                    <listitem>
+                        <para>Startbildschirm finalisieren.<orderedlist>
+                                <listitem>
+                                    <para>Layout anpassen</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Texte und Inhalte einfügen</para>
+                                </listitem>
+                                <listitem>
+                                    <para>Verlinkungen und File-Namen aktualisieren</para>
+                                </listitem>
+                            </orderedlist></para>
+                    </listitem>
+                    <listitem>
+                        <para>Veränderung der bestehende XQuery Datei, dessen Funktionen durch das
+                            Klicken einer der Knöpfe: "Spiel spielen", "Nochmal spielen" oder "Neues
+                            Spiel", ausgeführt werden. Darüberhinaus soll sichergestellt werden,
+                            dass die Funktionen auch auf dem BaseX-Server laufen. Anschließend soll
+                            die Datei in die Controller-Datei, "controller.xquery", eingefügt
+                            werden.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Nachdem eine neue Spielinstanz in der Datenbank kreiert wurde, rufe den XSLT
+                            Transformator "MancalaTransformator" mit einem web:redirect zu dem Link 
+                            "http://localhost:8984/gxf/transform/{$gameId}" auf. Erstelle zusätzlich eine 
+                            neue XQuery-Methode, "controller.xquery", die eine Spiel-ID als Parameter hat, 
+                            auf den Transformator anwendet und eine HTML-Seite ausgibt.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Modifizieren der XSLT-Datei "MancalaTransformator", sodass die Häuser als 
+                            Links angezeigt werden. Hierbei muss darauf geachtet werden, dass die gegnerischen Häuser nicht
+                            angeklickt werden können. Sobald ein Haus angeklickt wurde soll der folgende Link geöffnet werden:
+                            "http://localhost:8984/gxf/move/{$gameId}/{$houseId}". Zusätzlich muss HTML als 
+                            DOCTYPE hinzugefügt werden.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Das Spielfeld-Layout bekommt ein anständiges CSS-Styling (Hintergrundbilder etc.)
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Die XQuery-Datei "moveSeeds.xquery" muss so verändert werden, dass sie REST-Aufrufe 
+                            eines Klickes auf ein Haus verarbeiten kann. Nachdem die Steine gegen den Uhrzeigersinn verteilt wurden
+                            erstelle einen web:redirect zu dem Link "http://localhost:8984/gxf/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}"
+                            Füge anschließend die web:redirect-Methode der XQuery Datei "controller.xquery" bei.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Vereinigen der Methoden der Spezialfälle des letzten Steins zu einer einzigen XQuery-Datei
+                            "specialCases.xquery". Die Datei soll zusätzlich den REST-Aufruf des Links 
+                            "http://localhost:8984/gxf/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}"
+                            verarbeiten. Nachdem die Datenbank überprüft und aktualisiert wurde, soll ein web:redirect zu dem Link
+                            "http://localhost:8984/gxf/checkGameOver/{$gameId}" erstellt werden. Dieser soll der XQuery-Datei
+                            "controller.xquery" hinzugefügt werden.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Die GameOver XQuery-Datei soll so verändert werden, dass sie den REST-Aufruf weiterleitet an 
+                            den Link "http://localhost:8984/gxf/checkGameOver/{$gameId}". Nachdem überprüft
+                            wurde ob das Spiel vorbei ist, soll ein neuer web-redirect zu dem Link
+                            "http://localhost:8984/gxf/transform/{$gameId}" geöffnet werden.
+                            (ähnlich wie in 3.)
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Eine neue XQuery-Methode "cleanDatabase" soll erstellt werden, die alle Spielinstanzen, die zuende sind 
+                            von der Datenbank löscht.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Ein Help-Button soll erstellt werden, der auf dem Spielfeld-Bildschirm angezeigt wird.
+                            Sbald er angelickt wurde soll sich ein Popup öffnen, welches Spielinstruktionen beinhaltet.
+                            Der Button soll in der "MancalaTransformator"-Datei implementiert werden.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>Die Dokumentation der Arbeitsblätter muss überarbeitet werden und die 
+                            der Projektphase angefertigt. Die Applikation soll beschrieben werden, 
+                            Teammeetings, Entwürfe, Diagramme etc. angefertig.
+                        </para>
+                    </listitem>
+                </orderedlist></para>
         </chapter>
         <chapter>
             <title>Entwurf</title>
