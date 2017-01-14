@@ -95,8 +95,8 @@
                         </listitem>
                     </itemizedlist>Diese Aufgaben haben wir auf die einzelnen Gruppenmitglieder
                     verteilt. Damit keine Ungleichheiten auftreten, haben wir uns dazu entschieden,
-                    uns auf ein XML-Editor zu einigen. Da Oxygen auch in den Übungen benutzt wurde
-                    und am wenigsten zusätzliche Plug-Ins benötigte, haben wir uns für Oxygen
+                    uns auf ein XML-Editor zu einigen. Da oXygen auch in den Übungen benutzt wurde
+                    und am wenigsten zusätzliche Plug-Ins benötigte, haben wir uns für oXygen
                     entschieden.</para>
             </sect1>
             <sect1>
@@ -116,9 +116,10 @@
                     Orientierung, unterschiedliche Farben. Bei der Darstellung der Steine in den
                     Häusern und Mancalas, haben wir aus Rücksicht der Übersicht uns dazu
                     entschieden, in den Häusern die Steine als kleine Punkte anzuzeigen und in den
-                    Mancalas als Zahl. <inlinemediaobject>
+                    Mancalas als Zahl. </para>
+                <para> <inlinemediaobject>
                         <imageobject>
-                            <imagedata fileref="MancalaGUI.png" width="70%"/>
+                            <imagedata fileref="MancalaGUI.png" width="95%"/>
                         </imageobject>
                     </inlinemediaobject></para>
                 
@@ -133,29 +134,131 @@
             <title>XDM und XPath</title>
             <sect1>
                 <title>Organisation</title>
-                <para></para>
+                <para>Ein letztes mal haben wir uns dazu entschieden, jeder die Aufgabe 2 zu bearbeiten. Die erste Aufgabe
+                    hat ein Freiwilliger übernommen, damit alle die gleiche Basis haben und die Ergebnisse vergleichbarer sind.
+                    Anschließend sind wir, in unserem Teammeeting nach dem gleichen Prozedere vorgegangen, wie bei den letzten 
+                    Übungsblättern: Vergleichen, diskutieren, verbessern und eine gemeinsame Lösung schaffen. 
+                    Die Erarbeitungsphase neigte sich dem Ende, es gab nur noch ein relevantes Aufgabenblatt
+                    und auch die Projektaufgabe wurde bereits veröffentlicht. Das bot erste Diskussionen über Zielsetzungen, den
+                    Zeitablauf und ähnliches. Dabei entstand jedoch noch nichts konkretes.
+                    
+                </para>
+            </sect1>
+            <sect1>
+                <title>Thematik: Praktischer Umgang mit XPath und Entwicklung modularer und
+                    konfigurierbarer XSLT-Programme</title>
+                <para>Zwei Aufgaben wurden bearbeitet. </para>
+                <para>Die Vorbereitung auf das Übungsblatt 3, beschränkte sich auf die Einarbeit in XSLT. Da wir uns bereits
+                    am Anfang dazu entschieden hatten, oXygen zu benutzen, mussten wir keinen zusätzlichen
+                    XSLT-Prozessor oder eine neue Entwicklungsumgebung installieren.In der ersten Aufgabe haben wir ein Klassendiagramm erstellt. Auf diese Weise konnten wir 
+                    die einzelnen Bestandteile und die Zustandsdaten des Mancala-Spiels herausfiltern. 
+                    <inlinemediaobject>
+                        <imageobject>
+                            <imagedata fileref="/Users/nickschneider/xml_lab/exercises/exercise3/classDiagram.png" width ="95%"/>
+                        </imageobject>
+                    </inlinemediaobject>
+                   </para> 
+                <para>Diese bildeten die Grundlage für den zweiten Teil der ersten Aufgabe, die Erstellung einer DTD. 
+                    Mit dem Klassendiagramm ließ sich nun relativ einfach eine DTD erstellen.
+                    Als Vorbereitung der zweiten Aufgabe, haben wir das Ergebnis des zweiten Aufgabenblattes genommen, und 
+                    die SVG-Graphik überarbeitet. die Hauptaufgabe war die Entwicklung eines Transformators, der aus den in XML-kodierten Zustandsdaten 
+                    eine HTML/SVG-Datei generiert. 
+                </para>
             </sect1>
         </chapter>
         <chapter>
             <title>XSLT</title>
             <sect1>
                 <title>Organisation</title>
-                <para></para>
+                <para>Das 4. Übungsblatt war maßgeblich für unsere Aufgabenverteilung für das
+                    Projekt. Aus den zwei Aufgaben, die vorgegeben waren, haben wir im ersten
+                    Schritt mehrere Teilaufgaben gemacht. Die Teilaufgaben konnten wir dann auf die
+                    einzelnen Teammitglieder verteilen. Im nächsten Schritt, nachdem jeder seine Aufgaben erfüllt 
+                    hatten, konnten wir die einzelnen Code-Stücke zu einem Ganzen zusammenfügen. Damit hatten wir uns 
+                    die Grundlage des Projektes gebildet.
+                </para>
+            </sect1>
+            <sect1>
+                <title>Thematik: XQuery</title>
+                <para>Zwei Aufgaben waren zu bearbeiten. </para>
+                <para>Die zwei Aufgaben haben wir, wie in dem Organisationspart beschrieben,
+                    unterteilt. So entstand aus der ersten Aufgabe, die beiden Aufgaben:<itemizedlist>
+                        <listitem>
+                            <para>Erweiterung des Klassendiagramms</para>
+                        </listitem>
+                        <listitem>
+                            <para>Erstellung der Use Cases</para>
+                        </listitem>
+                    </itemizedlist>Dem Klassendiagramm liegt das Klassendiagramm aus dem 3.
+                    Übungsbaltt zu Grunde. Es wurde jedoch um Methoden erweitert, die für die
+                    Spielfunktionen essentiell sind. Diese Methoden wurden mithilfe der Use Cases
+                    klar identifiziert und später in Aufgabe 2 implementiert. <inlinemediaobject>
+                        <imageobject>
+                            <imagedata fileref="exercises/exercise4/classDiagramMethods.png"
+                                width="95%"/>
+                        </imageobject>
+                    </inlinemediaobject></para>
+                <para> Die folgenden Methoden haben sich aus den Use Cases und dem Klassendiagramm
+                    herauskristallisiert:<itemizedlist>
+                        <listitem>
+                            <para>mancalaGame(): In dieser Methode wird ein neues Mancala Kalah
+                                Spielfeld angelegt. Die Mancalas sind mit 0 und die Häuser mit
+                                jeweils vier Steinen initialisiert. Zusätzlich soll eine zufällige
+                                Spiel-ID generiert werden und der anfangende Spieler gewählt
+                                werden.</para>
+                        </listitem>
+                        <listitem>
+                            <para>moveSeeds(ID house): Die Methode soll realisieren, wenn der
+                                Spieler auf eines seiner eigenen Häuser klickt, die Anzahl der
+                                Steine speichern, das Haus mit null Steinen initialisieren und die
+                                Steine im Uhrzeigersinn, mit der Ausnahme des gegnerischen Mancalas,
+                                verteilen. </para>
+                        </listitem>
+                        <listitem>
+                            <para>checkSpecialCases(ID lastPit): Es muss hier zwischen zwei Fällen
+                                differenziert werden: </para>
+                            <para>Der Fall, dass der letzte Stein in ein leeres Haus gelegt wird.
+                                Als Folge müssen dieser Stein und die Steine des im
+                                gegenüberliegenden Hauses in das Mancala gelegt werden. </para>
+                            <para>Der Fall, dass der letzte Stein in das eigene Mancala gelegt wird.
+                                So muss darauf geachtet werden, dass der Spieler einen erneuten Zug
+                                bekommt.</para>
+                        </listitem>
+                        <listitem>
+                            <para>checkIfGameOver(): Das ist die abschließende Methode. Es muss
+                                überprüft werden, ob einer der beiden Spieler keine Steine mehr in
+                                all seinen Häusern hat. Tritt dies ein, so ist das Spiel beendet und
+                                alle Steine aus den gegnerischen Häusern, werden in das gegnerische
+                                Mancala gelegt.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
             </sect1>
         </chapter>
         <chapter>
             <title>XQuery</title>
             <sect1>
                 <title>Organisation</title>
-                <para></para>
+                <para>Das letzte Übungsblatt war für uns nicht mehr relevant, da wir nicht geplant hatten
+                XForms in unser Projekt miteinzubinden. Daher hatten wir die Möglichkeit, die Methoden und Aufgaben
+                weiter zu spezifizieren und stetig neue Problematiken zügig zu klären. </para>
             </sect1>
         </chapter>
+    </part>
+    <part>
+        <title>Projektphase</title>
         <chapter>
-            <title>XML-Stack für Web-Anwendungen und XForms</title>
-            <sect1>
-                <title>Organisation</title>
-                <para></para>
-            </sect1>
+            <title>Aufgabenverteilung</title>
+            <para></para>
+        </chapter>
+        <chapter>
+            <title>Entwurf</title>
+            <para></para>
+        </chapter>
+        
+        <chapter>
+            <title>Besonderheiten der Implementierung</title>
+            <para></para>
         </chapter>
     </part>
 </book>
