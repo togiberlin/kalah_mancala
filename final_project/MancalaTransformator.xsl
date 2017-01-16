@@ -11,14 +11,23 @@
     
     <xsl:output method="html" encoding="UTF-8"/>
     
-    <!-- Variables -->
+    <!-- Variables for the positioning of the houses -->
     <xsl:variable name="xPosHouse" select="number(18.75)"/>
     <xsl:variable name="yPosHouse1" select="number(17.5)"/>
     <xsl:variable name="yPosHouse2" select="number(52.5)"/>
     <xsl:variable name="xOffsetHouses" select="number(12.5)"/>
+    
+    <!-- Variables for the sizing of the houses -->
+    <xsl:variable name="rHouse" select="number(7)"/>
+    
+    <!-- Variables for the positioning of the stores -->
     <xsl:variable name="xPosStore1" select="number(7)"/>
     <xsl:variable name="xPosStore2" select="number(93)"/>
     <xsl:variable name="yPosStore" select="number(35)"/>
+    
+    <!-- Variables for the sizing of the stores -->
+    <xsl:variable name="rxStore" select="number(5.5)"/>
+    <xsl:variable name="ryStore" select="number(29)"/>
     
     <xsl:template match="/">
         <html>
@@ -57,29 +66,29 @@
                     </feMerge>
                 </filter>
                 
-                <!-- Test whose turn it is -->
+                <!-- Test whose turn it is and apply the glow -->
                 <xsl:choose>
                     <xsl:when test="$turnOfPlayerOne = 0">
                         <!-- Store player 1 -->
-                        <ellipse id="store-p1-template" rx="5.5%" ry="29%" stroke-width="5" />
+                        <ellipse id="store-p1-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" />
                         <!-- Store player 2 -->
-                        <ellipse id="store-p2-template" rx="5.5%" ry="29%" stroke-width="5" style="filter:url(#glow)" />
+                        <ellipse id="store-p2-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" style="filter:url(#glow)" />
                         
                         <!-- House player 1 -->
-                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="7%" stroke="orange" stroke-width="5" fill="lightyellow" />
+                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="{$rHouse}%" stroke="orange" stroke-width="5" fill="lightyellow" />
                         <!-- House player 2 -->
-                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="7%" stroke="blue" stroke-width="5" fill="lightblue" style="filter:url(#glow)" />
+                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="{$rHouse}%" stroke="blue" stroke-width="5" fill="lightblue" style="filter:url(#glow)" />
                     </xsl:when>
                     <xsl:otherwise>
                         <!-- Store player 1 -->
-                        <ellipse id="store-p1-template" rx="5.5%" ry="29%" stroke-width="5" style="filter:url(#glow)" />
+                        <ellipse id="store-p1-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" style="filter:url(#glow)" />
                         <!-- Store player 2 -->
-                        <ellipse id="store-p2-template" rx="5.5%" ry="29%" stroke-width="5" />
+                        <ellipse id="store-p2-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" />
                         
                         <!-- House player 1 -->
-                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="7%" stroke="orange" stroke-width="5" fill="lightyellow" style="filter:url(#glow)" />
+                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="{$rHouse}%" stroke="orange" stroke-width="5" fill="lightyellow" style="filter:url(#glow)" />
                         <!-- House player 2 -->
-                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="7%" stroke="blue" stroke-width="5" fill="lightblue" />
+                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="{$rHouse}%" stroke="blue" stroke-width="5" fill="lightblue" />
                     </xsl:otherwise>
                 </xsl:choose>
                 
@@ -94,9 +103,10 @@
                 <rect rx="20" ry="20" width="100%" height="70%" fill="green" stroke="green" stroke-width="5" fill-opacity="0.3"/>
             </svg>
             
-            <!-- Check if the game is over yet -->
+            <!-- Check if the game is over yet and display the corresponding screen -->
             <xsl:choose>
                 <xsl:when test="$gameOver = 0">
+                    <!-- The game is not over -->
                     <svg>
                         <text x="50%" y="37%" font-size="50" fill="green" text-anchor="middle" >MANCALA</text>
                     </svg>
@@ -110,15 +120,18 @@
                     </g>
                     
                     <xsl:apply-templates/>
+                    
                 </xsl:when>
                 <xsl:otherwise>
+                    <!-- The game is over, display the results -->
                     <xsl:variable name="store1NumOfSeeds" select="player1/store1/numOfSeeds"/>
                     <xsl:variable name="store2NumOfSeeds" select="player2/store2/numOfSeeds"/>
+                    
                     <!-- Check who the winner is -->
                     <xsl:choose>
                         <xsl:when test="$store1NumOfSeeds &lt; $store2NumOfSeeds">
                             <svg>
-                                <text x="50%" y="37%" font-size="50" fill="red" text-anchor="middle" >Awesome! Congratulations Player 2!</text>
+                                <text x="50%" y="37%" font-size="50" fill="red" text-anchor="middle" >Awesome! Congratulations red player!</text>
                             </svg>
                         </xsl:when>
                         <xsl:when test="$store1NumOfSeeds = $store2NumOfSeeds">
@@ -128,7 +141,7 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <svg>
-                                <text x="50%" y="37%" font-size="50" fill="red" text-anchor="middle" >Awesome! Congratulations Player 1!</text>
+                                <text x="50%" y="37%" font-size="50" fill="red" text-anchor="middle" >Awesome! Congratulations blue player!</text>
                             </svg>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -163,117 +176,127 @@
     </xsl:template>
     <xsl:template match="house11">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house11'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 1">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house11">
                     <svg>
                         <use id="house-p1-1" xlink:href="#house-p1-template" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
                 <use id="house-p1-1" xlink:href="#house-p1-template" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse1)"/>
     </xsl:template>
     <xsl:template match="house12">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house12'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 1">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house12">
                     <svg>
                         <use id="house-p1-2" xlink:href="#house-p1-template" x="{$xOffsetHouses}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
                 <use id="house-p1-2" xlink:href="#house-p1-template" x="{$xOffsetHouses}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse1)"/>
     </xsl:template>
     <xsl:template match="house13">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house13'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 2"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 1">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house13">
                     <svg>
-                        <use id="house-p1-3" xlink:href="#house-p1-template" x="{$xOffsetHouses * 2}%"/>
+                        <use id="house-p1-3" xlink:href="#house-p1-template" x="{$offset}%"/>
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-3" xlink:href="#house-p1-template" x="{$xOffsetHouses * 2}%"/>
+                <use id="house-p1-3" xlink:href="#house-p1-template" x="{$offset}%"/>
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 2),$yPosHouse1)"/>
     </xsl:template>
     <xsl:template match="house14">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house14'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 3"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 1">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house14">
                     <svg>
-                        <use id="house-p1-4" xlink:href="#house-p1-template" x="{$xOffsetHouses * 3}%" />
+                        <use id="house-p1-4" xlink:href="#house-p1-template" x="{$offset}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-4" xlink:href="#house-p1-template" x="{$xOffsetHouses * 3}%" />
+                <use id="house-p1-4" xlink:href="#house-p1-template" x="{$offset}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 3),$yPosHouse1)"/>
     </xsl:template>
     <xsl:template match="house15">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house15'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 4"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 1">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house15">
                     <svg>
-                        <use id="house-p1-5" xlink:href="#house-p1-template" x="{$xOffsetHouses * 4}%" />
+                        <use id="house-p1-5" xlink:href="#house-p1-template" x="{$offset}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-5" xlink:href="#house-p1-template" x="{$xOffsetHouses * 4}%" />
+                <use id="house-p1-5" xlink:href="#house-p1-template" x="{$offset}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 4),$yPosHouse1)"/>
     </xsl:template>
     <xsl:template match="house16">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house16'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 5"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 1">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house16">
                     <svg>
-                        <use id="house-p1-6" xlink:href="#house-p1-template" x="{$xOffsetHouses * 5}%" />
+                        <use id="house-p1-6" xlink:href="#house-p1-template" x="{$offset}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-6" xlink:href="#house-p1-template" x="{$xOffsetHouses * 5}%" />
+                <use id="house-p1-6" xlink:href="#house-p1-template" x="{$offset}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 5),$yPosHouse1)"/>
     </xsl:template>
     
     <!-- Houses of player 2 -->
@@ -282,117 +305,127 @@
     </xsl:template>
     <xsl:template match="house21">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house21'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 0">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house21">
                     <svg>
                         <use id="house-p2-1" xlink:href="#house-p2-template" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse2)" />
                 </a>
             </xsl:when>
             <xsl:otherwise>
                 <use id="house-p2-1" xlink:href="#house-p2-template" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse2)" />
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse2)" />
     </xsl:template>
     <xsl:template match="house22">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house22'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 0">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house22">
                     <svg>
                         <use id="house-p2-2" xlink:href="#house-p2-template" x="{$xOffsetHouses}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
                 <use id="house-p2-2" xlink:href="#house-p2-template" x="{$xOffsetHouses}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse2)"/>
     </xsl:template>
     <xsl:template match="house23">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house23'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 2"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 0">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house23">
                     <svg>
-                        <use id="house-p2-3" xlink:href="#house-p2-template" x="{$xOffsetHouses * 2}%" />
+                        <use id="house-p2-3" xlink:href="#house-p2-template" x="{$offset}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-3" xlink:href="#house-p2-template" x="{$xOffsetHouses * 2}%" />
+                <use id="house-p2-3" xlink:href="#house-p2-template" x="{$offset}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 2),$yPosHouse2)"/>
     </xsl:template>
     <xsl:template match="house24">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house24'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 3"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 0">
-                    <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
-                        <svg>
-                            <use id="house-p2-4" xlink:href="#house-p2-template" x="{$xOffsetHouses * 3}%" />
-                        </svg>
-                    </a>
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house24">
+                    <svg>
+                        <use id="house-p2-4" xlink:href="#house-p2-template" x="{$offset}%" />
+                    </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
+                </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-4" xlink:href="#house-p2-template" x="{$xOffsetHouses * 3}%" />
+                <use id="house-p2-4" xlink:href="#house-p2-template" x="{$offset}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 3),$yPosHouse2)"/>
     </xsl:template>
     <xsl:template match="house25">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house25'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 4"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 0">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house25">
                     <svg>
-                        <use id="house-p2-5" xlink:href="#house-p2-template" x="{$xOffsetHouses * 4}%" />
+                        <use id="house-p2-5" xlink:href="#house-p2-template" x="{$offset}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-5" xlink:href="#house-p2-template" x="{$xOffsetHouses * 4}%" />
+                <use id="house-p2-5" xlink:href="#house-p2-template" x="{$offset}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 4),$yPosHouse2)"/>
     </xsl:template>
     <xsl:template match="house26">
         <xsl:variable name="numOfSeeds" select="numOfSeeds"/>
-        <xsl:variable name="gameId" select="//mancalaGame/@id"/>
-        <xsl:variable name="houseId" select="'house26'"/>
         <xsl:variable name="turnOfPlayerOne" select="//turnOfPlayerOne"/>
+        <xsl:variable name="offset" select="$xOffsetHouses * 5"/>
+        <!-- Test if the house should be displayed as a link, which triggers a REST call -->
         <xsl:choose>
             <xsl:when test="$turnOfPlayerOne = 0">
-                <a href="http://localhost:8984/gxf/move/{$gameId}/{$houseId}">
+                <xsl:variable name="gameId" select="//mancalaGame/@id"/>
+                <a href="http://localhost:8984/gxf/move/{$gameId}/house26">
                     <svg>
-                        <use id="house-p2-6" xlink:href="#house-p2-template" x="{$xOffsetHouses * 5}%" />
+                        <use id="house-p2-6" xlink:href="#house-p2-template" x="{$offset}%" />
                     </svg>
+                    <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-6" xlink:href="#house-p2-template" x="{$xOffsetHouses * 5}%" />
+                <use id="house-p2-6" xlink:href="#house-p2-template" x="{$offset}%" />
+                <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses * 5),$yPosHouse2)"/>
     </xsl:template>
     
     <!-- Get the corresponding representation of the seeds -->
