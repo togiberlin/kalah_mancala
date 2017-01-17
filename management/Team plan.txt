@@ -13,7 +13,7 @@ Tasks:
 
 3.) (DONE) TOGI - Modify the XSLT file "MancalaTransformator" to display houses as links. Make sure one can't click on the houses of the opposing player. When clicking on a house trigger the link "http://localhost:8984/gxf/move/{$gameId}/{$houseId}". Add XHTML as the DOCTYPE in the transformator.
 
-3.1.) TOGI - Add CSS styling for the game field (image as background, hover effects etc.).
+3.1.) (DONE) JOONAS - Add CSS styling for the game field (image as background, hover effects etc.).
 
 4.) (DONE) JOONAS - Modify the XQuery file "moveSeeds.xquery" to react to REST calls resulting from clicks on the houses. After distributing the seeds, call a XQuery method to create a web:redirect to the link "http://localhost:8984/gxf/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}", which checks the special cases. Add the web:redirect method to the XQuery file "controller.xquery".
 
