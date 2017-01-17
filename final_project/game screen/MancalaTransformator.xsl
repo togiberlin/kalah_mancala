@@ -38,7 +38,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                 
                 <!-- Custom style -->
-                <link rel="stylesheet" href="gameScreenStyle.css" type='text/css'/>
+                <link rel="stylesheet" href="/static/kalahMancala/gameScreenStyle.css" type='text/css'/>
             </head>
             <body>
                 <xsl:apply-templates/>
@@ -74,7 +74,7 @@
                 
                 <!-- The background image for the field -->
                 <pattern id="background" x="0" y="0" width="1" height="1">
-                    <image width="100%" xlink:href="woodPattern.jpg"/>
+                    <image width="100%" xlink:href="/static/kalahMancala/woodPattern.jpg"/>
                 </pattern>
                 
                 <!-- Test whose turn it is and apply the glow -->
