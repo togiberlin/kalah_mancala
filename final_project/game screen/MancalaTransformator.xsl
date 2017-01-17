@@ -33,6 +33,12 @@
         <html>
             <head>
                 <title>Kalah Mancala</title>
+                
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+                
+                <!-- Custom style -->
+                <link rel="stylesheet" href="gameScreenStyle.css" type='text/css'/>
             </head>
             <body>
                 <xsl:apply-templates/>
@@ -66,41 +72,46 @@
                     </feMerge>
                 </filter>
                 
+                <!-- The background image for the field -->
+                <pattern id="background" x="0" y="0" width="1" height="1">
+                    <image width="100%" xlink:href="woodPattern.jpg"/>
+                </pattern>
+                
                 <!-- Test whose turn it is and apply the glow -->
                 <xsl:choose>
                     <xsl:when test="$turnOfPlayerOne = 0">
                         <!-- Store player 1 -->
-                        <ellipse id="store-p1-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" />
+                        <ellipse id="store-p1-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5"/>
                         <!-- Store player 2 -->
-                        <ellipse id="store-p2-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" style="filter:url(#glow)" />
+                        <ellipse id="store-p2-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" style="filter:url(#glow)"/>
                         
                         <!-- House player 1 -->
-                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="{$rHouse}%" stroke="orange" stroke-width="5" fill="lightyellow" />
+                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="{$rHouse}%" stroke="orange" stroke-width="5" fill="lightyellow"/>
                         <!-- House player 2 -->
-                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="{$rHouse}%" stroke="blue" stroke-width="5" fill="lightblue" style="filter:url(#glow)" />
+                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="{$rHouse}%" stroke="blue" stroke-width="5" style="filter:url(#glow)"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <!-- Store player 1 -->
-                        <ellipse id="store-p1-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" style="filter:url(#glow)" />
+                        <ellipse id="store-p1-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" style="filter:url(#glow)"/>
                         <!-- Store player 2 -->
-                        <ellipse id="store-p2-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5" />
+                        <ellipse id="store-p2-template" rx="{$rxStore}%" ry="{$ryStore}%" stroke-width="5"/>
                         
                         <!-- House player 1 -->
-                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="{$rHouse}%" stroke="orange" stroke-width="5" fill="lightyellow" style="filter:url(#glow)" />
+                        <circle id="house-p1-template" cx="{$xPosHouse}%" cy="{$yPosHouse1}%" r="{$rHouse}%" stroke="orange" stroke-width="5" style="filter:url(#glow)"/>
                         <!-- House player 2 -->
-                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="{$rHouse}%" stroke="blue" stroke-width="5" fill="lightblue" />
+                        <circle id="house-p2-template" cx="{$xPosHouse}%" cy="{$yPosHouse2}%" r="{$rHouse}%" stroke="blue" stroke-width="5" fill="lightblue"/>
                     </xsl:otherwise>
                 </xsl:choose>
                 
                 <!-- Button -->
-                <rect id="button" y="32%" rx="20" ry="20" width="15%" height="6%" stroke="green" stroke-width="5" fill="lightgreen" />
+                <rect id="button" y="32%" rx="20" ry="20" width="15%" height="6%" stroke="green" stroke-width="5"/>
                 <!-- Seed -->
-                <circle id="seed" r="1%" fill="black" />
+                <circle id="seed" r="1%" fill="black"/>
             </defs>
             
             <!-- Background -->
             <svg>
-                <rect rx="20" ry="20" width="100%" height="70%" fill="green" stroke="green" stroke-width="5" fill-opacity="0.3"/>
+                <rect rx="20" ry="20" width="100%" height="70%" fill="url(#background)" stroke="black" stroke-width="5"/>
             </svg>
             
             <!-- Check if the game is over yet and display the corresponding screen -->
@@ -108,16 +119,20 @@
                 <xsl:when test="$gameOver = 0">
                     <!-- The game is not over -->
                     <svg>
-                        <text x="50%" y="37%" font-size="50" fill="green" text-anchor="middle" >MANCALA</text>
+                        <text x="50%" y="37%" font-size="50" font-weight="bold" fill="lightgreen" text-anchor="middle" >MANCALA</text>
                     </svg>
-                    <g>
-                        <use id="btn-newgame" xlink:href="#button" x="22.5%" />
-                        <text x="30%" y="36%" font-size="25" fill="darkgreen" text-anchor="middle" >NEW GAME</text>
-                    </g>
-                    <g>
-                        <use id="btn-help" xlink:href="#button" x="62.5%" />
-                        <text x="70%" y="36%" font-size="25" fill="darkgreen" text-anchor="middle" >HELP</text>
-                    </g>
+                    <a href="http://localhost:8984/gxf/newGame">
+                        <g>
+                            <use id="btn-menu" xlink:href="#button" x="22.5%" fill="lightgreen"/>
+                            <text id="btn-menu-text" x="30%" y="36%" font-size="20" font-family="arial" fill="darkgreen" text-anchor="middle" >NEW GAME</text>
+                        </g>
+                    </a>
+                    <a href="">
+                        <g>
+                            <use id="btn-menu" xlink:href="#button" x="62.5%" fill="lightgreen"/>
+                            <text id="btn-menu-text" x="70%" y="36%" font-size="20" font-family="arial" fill="darkgreen" text-anchor="middle" >HELP</text>
+                        </g>
+                    </a>
                     
                     <xsl:apply-templates/>
                     
@@ -131,7 +146,7 @@
                     <xsl:choose>
                         <xsl:when test="$store1NumOfSeeds &lt; $store2NumOfSeeds">
                             <svg>
-                                <text x="50%" y="37%" font-size="50" fill="red" text-anchor="middle" >Awesome! Congratulations red player!</text>
+                                <text x="50%" y="37%" font-size="50" fill="red" text-anchor="middle" >Awesome! Congratulations yellow player!</text>
                             </svg>
                         </xsl:when>
                         <xsl:when test="$store1NumOfSeeds = $store2NumOfSeeds">
@@ -183,13 +198,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house11">
                     <svg>
-                        <use id="house-p1-1" xlink:href="#house-p1-template" />
+                        <use id="house-p1-1" class="house1-hover" xlink:href="#house-p1-template" fill="lightyellow"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-1" xlink:href="#house-p1-template" />
+                <use id="house-p1-1" xlink:href="#house-p1-template"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -203,13 +218,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house12">
                     <svg>
-                        <use id="house-p1-2" xlink:href="#house-p1-template" x="{$xOffsetHouses}%" />
+                        <use id="house-p1-2" class="house1-hover" xlink:href="#house-p1-template" x="{$xOffsetHouses}%" fill="lightyellow"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-2" xlink:href="#house-p1-template" x="{$xOffsetHouses}%" />
+                <use id="house-p1-2" xlink:href="#house-p1-template" x="{$xOffsetHouses}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -224,7 +239,7 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house13">
                     <svg>
-                        <use id="house-p1-3" xlink:href="#house-p1-template" x="{$offset}%"/>
+                        <use id="house-p1-3" class="house1-hover" xlink:href="#house-p1-template" x="{$offset}%" fill="lightyellow"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
@@ -245,13 +260,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house14">
                     <svg>
-                        <use id="house-p1-4" xlink:href="#house-p1-template" x="{$offset}%" />
+                        <use id="house-p1-4" class="house1-hover" xlink:href="#house-p1-template" x="{$offset}%" fill="lightyellow"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-4" xlink:href="#house-p1-template" x="{$offset}%" />
+                <use id="house-p1-4" xlink:href="#house-p1-template" x="{$offset}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -266,13 +281,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house15">
                     <svg>
-                        <use id="house-p1-5" xlink:href="#house-p1-template" x="{$offset}%" />
+                        <use id="house-p1-5" class="house1-hover" xlink:href="#house-p1-template" x="{$offset}%" fill="lightyellow"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-5" xlink:href="#house-p1-template" x="{$offset}%" />
+                <use id="house-p1-5" xlink:href="#house-p1-template" x="{$offset}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -287,13 +302,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house16">
                     <svg>
-                        <use id="house-p1-6" xlink:href="#house-p1-template" x="{$offset}%" />
+                        <use id="house-p1-6" class="house1-hover" xlink:href="#house-p1-template" x="{$offset}%" fill="lightyellow"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p1-6" xlink:href="#house-p1-template" x="{$offset}%" />
+                <use id="house-p1-6" xlink:href="#house-p1-template" x="{$offset}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse1)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -312,13 +327,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house21">
                     <svg>
-                        <use id="house-p2-1" xlink:href="#house-p2-template" />
+                        <use id="house-p2-1" class="house2-hover" xlink:href="#house-p2-template" fill="lightblue"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse2)" />
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-1" xlink:href="#house-p2-template" />
+                <use id="house-p2-1" xlink:href="#house-p2-template"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,$xPosHouse,$yPosHouse2)" />
             </xsl:otherwise>
         </xsl:choose>
@@ -332,13 +347,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house22">
                     <svg>
-                        <use id="house-p2-2" xlink:href="#house-p2-template" x="{$xOffsetHouses}%" />
+                        <use id="house-p2-2" class="house2-hover" xlink:href="#house-p2-template" x="{$xOffsetHouses}%" fill="lightblue"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-2" xlink:href="#house-p2-template" x="{$xOffsetHouses}%" />
+                <use id="house-p2-2" xlink:href="#house-p2-template" x="{$xOffsetHouses}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $xOffsetHouses),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -353,13 +368,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house23">
                     <svg>
-                        <use id="house-p2-3" xlink:href="#house-p2-template" x="{$offset}%" />
+                        <use id="house-p2-3" class="house2-hover" xlink:href="#house-p2-template" x="{$offset}%" fill="lightblue"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-3" xlink:href="#house-p2-template" x="{$offset}%" />
+                <use id="house-p2-3" xlink:href="#house-p2-template" x="{$offset}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -374,13 +389,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house24">
                     <svg>
-                        <use id="house-p2-4" xlink:href="#house-p2-template" x="{$offset}%" />
+                        <use id="house-p2-4" class="house2-hover" xlink:href="#house-p2-template" x="{$offset}%" fill="lightblue"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-4" xlink:href="#house-p2-template" x="{$offset}%" />
+                <use id="house-p2-4" xlink:href="#house-p2-template" x="{$offset}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -395,13 +410,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house25">
                     <svg>
-                        <use id="house-p2-5" xlink:href="#house-p2-template" x="{$offset}%" />
+                        <use id="house-p2-5" class="house2-hover" xlink:href="#house-p2-template" x="{$offset}%" fill="lightblue"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-5" xlink:href="#house-p2-template" x="{$offset}%" />
+                <use id="house-p2-5" xlink:href="#house-p2-template" x="{$offset}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
@@ -416,13 +431,13 @@
                 <xsl:variable name="gameId" select="//mancalaGame/@id"/>
                 <a href="http://localhost:8984/gxf/move/{$gameId}/house26">
                     <svg>
-                        <use id="house-p2-6" xlink:href="#house-p2-template" x="{$offset}%" />
+                        <use id="house-p2-6" class="house2-hover" xlink:href="#house-p2-template" x="{$offset}%" fill="lightblue"/>
                     </svg>
                     <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
                 </a>
             </xsl:when>
             <xsl:otherwise>
-                <use id="house-p2-6" xlink:href="#house-p2-template" x="{$offset}%" />
+                <use id="house-p2-6" xlink:href="#house-p2-template" x="{$offset}%"/>
                 <xsl:sequence select="fun:initSeeds($numOfSeeds,($xPosHouse + $offset),$yPosHouse2)"/>
             </xsl:otherwise>
         </xsl:choose>
