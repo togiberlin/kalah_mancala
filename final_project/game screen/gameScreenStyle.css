@@ -1,0 +1,35 @@
+/* Custom styles for the Kalah Mancala game screen */
+
+/* Link hovering effects for the houses and buttons */
+
+a:hover #btn-menu {
+    fill: green;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+a:hover #btn-menu-text {
+    fill: white;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+a:hover .house1-hover {
+    fill: yellow;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
+
+a:hover .house2-hover {
+    fill: cornflowerblue;
+    transition: 200ms;
+    transition-timing-function: ease-in-out;
+    -webkit-transition: 200ms;
+    -webkit-transition-timing-function: ease-in-out;
+}
