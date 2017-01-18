@@ -6,6 +6,7 @@ module namespace c = "kalahMancala/controller";
 
 import module namespace cm = "kalahMancala/common" at "common.xq";
 import module namespace ms = "kalahMancala/moveSeeds" at "moveSeeds.xquery";
+import module namespace go = "kalahMancala/checkGameOver" at "checkGameOver.xquery"; 
 declare namespace xslt = "http://basex.org/modules/xslt";
 
 declare variable $c:mancalaStartScreen := doc("startScreen.html");
@@ -102,3 +103,8 @@ declare updating %rest:path('/gxf/move/{$gameId}/{$house}') %rest:GET function c
 declare updating %rest:path('/gxf/specialCases/{$gameId}/{$startingPit}/{$numOfStepsToMove}/{$player}') %rest:GET function c:checkSpecialCases($gameId as xs:string, $startingPit as xs:string, $numOfStepsToMove as xs:decimal, $player as xs:decimal) {
   (: TODO - call the checkSpecialCases method. :)
 };
+
+(: Check if the game is over after distributing the seeds. :) 
+declare updating %rest:path('/gxf/checkGameOver/{$gameId}') %rest:GET function c:checkGameOver($gameId as xs:string) {
+  go:checkGameOver($gameId), db:output(cm:redirectToTransformator($gameId))
+}; 
