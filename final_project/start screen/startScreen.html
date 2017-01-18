@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <title>KalahMancala - Team XForms</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/kalahMancala/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="/static/kalahMancala/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css' />
 
     <!-- Theme CSS -->
-    <link href="css/agency.min.css" rel="stylesheet">
+    <link href="/static/kalahMancala/css/agency.min.css" rel="stylesheet" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -99,7 +99,7 @@
                     </span>
                     <h4 class="service-heading">Grundlagen</h4>
                     <p class="text-muted">
-                        Kalah ist eine Version des Strategiespiels Mancala. Es wird von zwei Spielern gespielt. Jeder Spieler besitzt ein Mancala und 6 kleine Häuser. In jedem Haus liegen zu Beginn des Spiels 4 Steine. Das Ziel des Spieles ist es so viele Steine wie möglich in sein eigenes Mancala, die Gewinnmulde, zu bringen.  </p>
+                        Kalaha ist eine Version des Strategiespiels Mancala. Es wird von zwei Spielern gespielt. Jeder Spieler besitzt jeweils eine Gewinnmulde ("Mancala") und 6 kleine Häuser. In jedem Haus liegen zu Beginn des Spiels 4 Steine. Das Ziel des Spieles ist es so viele Steine wie möglich in sein eigenes Mancala, die Gewinnmulde, zu bringen. Die Gewinnmulde befindet sich zur jeweiligen rechten Seite des Spielers.</p>
                 </div>
                 <div class="col-md-3">
                     <span class="fa-stack fa-4x">
@@ -107,7 +107,7 @@
                         <i class="fa fa-braille fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Spielzüge</h4>
-                    <p class="text-muted">Die Spieler sind abwechselnd dran. Der Spieler der am Zug ist, wählt eines seiner Häuser aus und verteilt die sich in diesem Haus befindlichen Steine gegen den Uhrzeigersinn sowohl auf die Häuser, als auch auf die Mancalas. 
+                    <p class="text-muted">Die Spieler sind abwechselnd dran. Der Spieler der am Zug ist, wählt eines seiner Häuser aus und verteilt die sich in diesem Haus befindlichen Steine gegen den Uhrzeigersinn sowohl auf die Häuser, als auch auf die Gewinnmulde. Als Ausnahme gilt jedoch, dass in die gegnerische Gewinnmulde kein Stein gelegt werden darf.
                     </p>
                 </div>
                 <div class="col-md-3">
@@ -116,7 +116,7 @@
                         <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Sonderregeln</h4>
-                    <p class="text-muted">Wenn der letzte Stein in das eigene Mancala fällt, so wird einem ein erneuter Spielzug gewährt. Wenn das gegnerische Haus leer ist und der letzte Stein in dieses Haus gelegt wird, wird dieser Stein und alle Steine aus dem gegenüberliegenden Haus in das eigene Mancala gelegt. </p>
+                    <p class="text-muted">Wenn der letzte Stein in das eigene Mancala fällt, so wird einem ein erneuter Spielzug gewährt. Wenn der letzte Stein in das leere, eigene Haus fällt, darf der Spieler sowohl den letzten Stein als auch alle Steine des gegenüber liegenden Hauses in die eigene Gewinnmulde legen.</p>
                 </div>
                 <div class="col-md-3">
                     <span class="fa-stack fa-4x">
@@ -124,7 +124,7 @@
                         <i class="fa fa-trophy fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Spielende</h4>
-                    <p class="text-muted">Das Spielende ist erreicht, sobald einer der beiden Spieler keine Steine mehr in seinen Häusern hat. Der andere Spieler kann nun die restlichen sich in seinen Häusern befindlichen Steine in sein Mancala legen. Sieger ist derjenige, der am meisten Steine in seinem Mancala hat.
+                    <p class="text-muted">Das Spielende ist erreicht, sobald einer der beiden Spieler keine Steine mehr in seinen Häusern hat. Der andere Spieler kann nun die restlichen sich in seinen Häusern befindlichen Steine in seine Gewinnmulde legen. Sieger ist derjenige, der am meisten Steine in seiner Gewinnmulde hat.
                     </p>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">
-                                        XML ist eine Sprache zur Kodierung strukturierter Informationen. Es bietet eine flexible Strukturierung, die standardisiert und austauschbar ist. Einer der wesentlichen Vorteile ist die Plattform- und Implementationsunabhängigkeit. </p>
+                                        XML ist eine Sprache zur Kodierung strukturierter Informationen. Es bietet eine flexible Strukturierung, die standardisiert und austauschbar ist. Einer der wesentlichen Vorteile ist die Plattform- und Implementationsunabhängigkeit.</p>
                                 </div>
                             </div>
                         </li>
@@ -166,7 +166,7 @@
                                     <h4>SVG</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">SVG ist eine XML-Anwendung zur Kodierung von Vektorgraphiken. Es ermöglicht einem graphische Objekte mit XML-Vokabular zu beschreiben. Darüberhinaus stellt SVG GUI-Elemente, wie z.B. Buttons bereit, die einem dabei helfen schnell Oberflächen zu generieren. Die Tatsache, dass SVG auf XML-Vokabular basiert führt zu einfacher Weiterverarbeitung. </p>
+                                    <p class="text-muted">SVG ist eine XML-Anwendung zur Kodierung von Vektorgrafiken. Es ermöglicht einem grafische Objekte mit XML-Vokabular zu beschreiben. Darüber hinaus stellt SVG GUI-Elemente, wie z.B. Buttons bereit, die einem dabei helfen, schnell Oberflächen zu generieren. Die Tatsache, dass SVG auf XML-Vokabular basiert, führt zu einer einfacheren Weiterverarbeitung.</p>
                                 </div>
                             </div>
                         </li>
@@ -179,7 +179,7 @@
                                     <h4>XQuery</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted"> XQuery ist die Abfragesprache für XML-Dokumente. Wie es für XML typisch ist, ist auch XQuery plattform- und implementationsunabhängig. Ein häufiger Vergleich zwischen SQL und Datenbanken mit XQuery und XML-Dokumenten legt nahe, dass XQuery aus einer großen Datenmenge kleine Teile abfragt.
+                                    <p class="text-muted"> XQuery ist die Abfragesprache für XML-Dokumente. Wie es für XML typisch ist, ist auch XQuery plattform- und implementationsunabhängig. Ein häufiger Vergleich zwischen SQL, XQuery-Datenbanken und XML-Dokumenten legt nahe, dass XQuery aus einer großen Datenmenge kleine Teile abfragt.
                                     </p>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@
                                     <h4>BaseX</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">BaseX ist ein Datenbankmanagementsystem für XML-Dokumente. Auch BaseX ist plattformunabhängig und bietet eine hohe Standardkonformität. Eine übersichtliche graphische Oberfläche ermöglicht eine schnelle und intuitive Interaktion mit dem System.</p>
+                                    <p class="text-muted">BaseX ist ein Datenbankmanagementsystem für XML-Dokumente. Auch BaseX ist plattformunabhängig und bietet eine hohe Standardkonformität. Eine übersichtliche grafische Oberfläche ermöglicht eine schnelle und intuitive Interaktion mit dem System.</p>
                                 </div>
                             </div>
                         </li>
@@ -215,7 +215,7 @@
             <div id="team-member" class="row">
                 <div class="col-sm-2">
                     <div class="team-member">
-                        <img src="img/team/joonas.jpeg" class="img-responsive img-circle" alt="">
+                        <img src="/static/kalahMancala/img/team/joonas.jpeg" class="img-responsive img-circle" alt="" />
                         <h4>Joonas Palm</h4>
                         <p class="text-muted">Informatik</p>
                         <ul class="list-inline social-buttons">
@@ -226,7 +226,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="team-member">
-                        <img src="img/team/togi.png" class="img-responsive img-circle" alt="">
+                        <img src="/static/kalahMancala/img/team/togi.png" class="img-responsive img-circle" alt="" />
                         <h4>Togi Dashnyam</h4>
                         <p class="text-muted">Wirtschaftsinformatik</p>
                         <ul class="list-inline social-buttons">
@@ -237,7 +237,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="team-member">
-                        <img src="img/team/empty.png" class="img-responsive img-circle" alt="">
+                        <img src="/static/kalahMancala/img/team/lovre.jpg" class="img-responsive img-circle" alt="" />
                         <h4>Lovre Petrovic</h4>
                         <p class="text-muted">Wirtschaftsinformatik</p>
                         <ul class="list-inline social-buttons">
@@ -248,7 +248,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="team-member">
-                        <img src="img/team/nick.jpeg" class="img-responsive img-circle" alt="">
+                        <img src="/static/kalahMancala/img/team/nick.jpeg" class="img-responsive img-circle" alt="" />
                         <h4>Nick Schneider</h4>
                         <p class="text-muted">Wirtschaftsinformatik</p>
                         <ul class="list-inline social-buttons">
@@ -259,7 +259,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="team-member">
-                        <img src="img/team/empty.png" class="img-responsive img-circle" alt="">
+                        <img src="/static/kalahMancala/img/team/alex.jpg" class="img-responsive img-circle" alt="" />
                         <h4>Alex Tsakpinis</h4>
                         <p class="text-muted">Informatik</p>
                         <ul class="list-inline social-buttons">
@@ -281,27 +281,26 @@
                         </li>
                     </ul>
                 </div>
-                    <span class="copyright">XML Praktikum - Team XForms</span>
-                </div>
+                <span class="copyright">XML Praktikum - Team XForms</span>
             </div>
         </div>
     </footer>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="/static/kalahMancala/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/kalahMancala/vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="/static/kalahMancala/js/jqBootstrapValidation.js"></script>
+    <script src="/static/kalahMancala/js/contact_me.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/agency.min.js"></script>
+    <script src="/static/kalahMancala/js/agency.min.js"></script>
 
 </body>
 
