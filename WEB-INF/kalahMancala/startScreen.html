@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>KalahMancala - Team XForms</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/kalahMancala/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link href="/static/kalahMancala/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'/>
+
+    <!-- Theme CSS -->
+    <link href="/static/kalahMancala/css/agency.min.css" rel="stylesheet"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Navigation ein-/ausklappen</span> Menü <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Team XForms</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#rules">Spielregeln</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#technologystack">Technology Stack</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Team</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Team XForms</div>
+                <div class="intro-heading">Mancala</div>
+                <a href="http://localhost:8984/gxf/newGame" class="page-scroll btn btn-xl">Jetzt spielen</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Game Rules Section -->
+    <section id="rules" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Spielregeln</h2>
+                    <h3 class="section-subheading text-muted">Wie Mancala gespielt wird</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Grundlagen</h4>
+                    <p class="text-muted">
+                        Kalah ist eine Version des Strategiespiels Mancala. Es wird von zwei Spielern gespielt. Jeder Spieler besitzt ein Mancala und sechs kleine Häuser. In jedem Haus liegen zu Beginn des Spiels vier Steine. Das Ziel des Spiels ist es so viele Steine wie möglich in sein eigenes Mancala, die Gewinnmulde, zu bringen.  </p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-braille fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Spielzüge</h4>
+                    <p class="text-muted">Die Spieler sind abwechselnd dran. Der Spieler der am Zug ist, wählt eines seiner Häuser aus und verteilt die sich in diesem Haus befindlichen Steine gegen den Uhrzeigersinn sowohl auf die Häuser, als auch auf die Mancalas. 
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-flash fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Sonderregeln</h4>
+                    <p class="text-muted">Wenn der letzte Stein in das eigene Mancala fällt, 
+                        so wird einem ein erneuter Spielzug gewährt. <br/>
+                        Wenn der letzte Stein in das eigene leere Haus gelegt wird und 
+						das gegnerische Haus nicht leer ist, so wird dieser Stein und alle 
+                        Steine aus dem gegenüberliegenden Hauses in das eigene 
+                        Mancala gelegt. </p>
+                </div>
+                <div class="col-md-3">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-trophy fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Spielende</h4>
+                    <p class="text-muted">Das Spielende ist erreicht, sobald einer der beiden Spieler keine Steine mehr in seinen Häusern hat. Der andere Spieler kann nun die restlichen sich in seinen Häusern befindlichen Steine in sein Mancala legen. Sieger ist derjenige, der am meisten Steine in seinem Mancala hat.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Section -->
+    <section id="technologystack">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Technology Stack</h2>
+                    <h3 class="section-subheading text-muted">Wir verwenden XML, SVG, XQuery und BaseX für unsere Applikation</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image fa-stack-2x">
+                                <i class="fa fa-4x fa-stack-1x fa-image"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>XML</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">
+                                        XML ist eine Sprache zur Kodierung strukturierter Informationen. Es bietet eine flexible Strukturierung, die standardisiert und austauschbar ist. Einer der wesentlichen Vorteile ist die Plattform- und Implementationsunabhängigkeit. </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image fa-stack-2x">
+                                <i class="fa fa-4x fa-cubes fa-stack-1x fa-inverse"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>SVG</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">SVG ist eine XML-Anwendung zur Kodierung von Vektorgraphiken. Es ermöglicht einem graphische Objekte mit XML-Vokabular zu beschreiben. Darüberhinaus stellt SVG GUI-Elemente, wie z.B. Buttons bereit, die einem dabei helfen schnell Oberflächen zu generieren. Die Tatsache, dass SVG auf XML-Vokabular basiert führt zu einfacher Weiterverarbeitung. </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image fa-stack-2x">
+                                <i class="fa fa-4x fa-exchange fa-stack-1x fa-inverse"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>XQuery</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted"> XQuery ist die Abfragesprache für XML-Dokumente. Wie es für XML typisch ist, ist auch XQuery plattform- und implementationsunabhängig. Ein häufiger Vergleich zwischen SQL und Datenbanken mit XQuery und XML-Dokumenten legt nahe, dass XQuery aus einer großen Datenmenge kleine Teile abfragt.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image fa-stack-2x">
+                                <i class="fa fa-4x fa-database fa-stack-1x fa-inverse"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>BaseX</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">BaseX ist ein Datenbankmanagementsystem für XML-Dokumente. Auch BaseX ist plattformunabhängig und bietet eine hohe Standardkonformität. Eine übersichtliche graphische Oberfläche ermöglicht eine schnelle und intuitive Interaktion mit dem System.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Unser Team</h2>
+                    <h3 class="section-subheading text-muted">Gruppe XForms</h3>
+                </div>
+            </div>
+            <div id="team-member" class="row">
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="/static/kalahMancala/img/team/joonas.jpeg" class="img-responsive img-circle" alt=""/>
+                        <h4>Joonas Palm</h4>
+                        <p class="text-muted">Informatik</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:joonas.palm.001@gmail.com"><i class="fa fa-envelope-o"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="/static/kalahMancala/img/team/togi.png" class="img-responsive img-circle" alt=""/>
+                        <h4>Togi Dashnyam</h4>
+                        <p class="text-muted">Wirtschaftsinformatik</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:tdashnyam@yahoo.com"><i class="fa fa-envelope-o"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="/static/kalahMancala/img/team/lovre.jpg" class="img-responsive img-circle" alt=""/>
+                        <h4>Lovre Petrovic</h4>
+                        <p class="text-muted">Wirtschaftsinformatik</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:lope91@web.de"><i class="fa fa-envelope-o"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="/static/kalahMancala/img/team/nick.jpeg" class="img-responsive img-circle" alt=""/>
+                        <h4>Nick Schneider</h4>
+                        <p class="text-muted">Wirtschaftsinformatik</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:nick.k.schneider@hotmail.de"><i class="fa fa-envelope-o"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="team-member">
+                        <img src="/static/kalahMancala/img/team/alex.jpg" class="img-responsive img-circle" alt=""/>
+                        <h4>Alex Tsakpinis</h4>
+                        <p class="text-muted">Informatik</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="mailto:alexandros.tsakpinis@googlemail.com"><i class="fa fa-envelope-o"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="http://www11.in.tum.de/"><i class="fa fa-home"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <span class="copyright">XML Praktikum - Team XForms</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/kalahMancala/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/kalahMancala/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/static/kalahMancala/js/jqBootstrapValidation.js"></script>
+    <script src="/static/kalahMancala/js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="/static/kalahMancala/js/agency.min.js"></script>
+
+</body>
+
+</html>
